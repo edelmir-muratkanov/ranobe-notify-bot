@@ -2,11 +2,14 @@ from aiogram import types
 from loader import dp, db
 from keyboards.default import kb_start
 from utils.check_updates import check
+from aiogram.dispatcher.webhook import SendMessage
 
 
 @dp.message_handler(text='/start')
 async def command_start(message: types.Message):
-    await message.answer(f'Welcome, {message.from_user.full_name}', reply_markup=kb_start)
+    # await message.answer(f'Welcome, {message.from_user.full_name}', reply_markup=kb_start)
+    chat_id = message.chat.id
+    return SendMessage(chat_id, f'Welcome, {message.from_user.full_name}', reply_markup=kb_start)
 
 
 @dp.message_handler(text='Мои источники')

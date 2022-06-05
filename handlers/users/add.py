@@ -6,6 +6,7 @@ from states import AddSource
 
 @dp.message_handler(text='Добавить источник')
 async def add_source(message: types.Message):
+    chat_id = message.chat.id
     await message.answer('Введите название: ')
     await AddSource.name.set()
 
