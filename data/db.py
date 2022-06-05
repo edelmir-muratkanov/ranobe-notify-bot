@@ -23,7 +23,7 @@ class Database:
     def setup(self):
         metadata.create_all(engine)
 
-    def add(self, chat_id: int, name: str, url: str, last_num: int):
+    def add(self, chat_id: int, name: str, url: str, last_num: int = 0):
         q = sources.insert().values(chat_id, name, url, last_num)
         r = self.conn.execute(q)
 
