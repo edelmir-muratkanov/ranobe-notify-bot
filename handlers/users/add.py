@@ -40,6 +40,7 @@ async def set_state_url(message: types.Message, state: FSMContext):
         chat_id = message.from_user.id
 
         db.add(chat_id, data['name'], data['url'])
+        
         await message.answer('Добавлен источник {}'.format(data['name']))
         await state.finish()
     except Exception as e:

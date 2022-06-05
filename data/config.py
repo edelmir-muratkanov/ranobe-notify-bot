@@ -7,6 +7,8 @@ APP_PATH = os.path.abspath('.')
 DELAY = 60 * 60 * 6
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_ID = os.getenv('ADMIN_ID')
+
+DATABASE_URL = os.getenv('DATABASE_URL')
 HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME')
 
 WEBHOOK_HOST = f'https://{HEROKU_APP_NAME}.herokuapp.com'
