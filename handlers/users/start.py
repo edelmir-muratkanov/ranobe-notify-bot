@@ -24,7 +24,7 @@ async def my_sources(message: types.Message):
     for _ in sources:
         chat_id, name, url, num = _
         text += f'{name}\n{url}\n\n'
-    await message.answer(text)
+    await message.answer(text, disable_web_page_preview=True)
 
 
 @dp.message_handler(text='Проверить обновления')
