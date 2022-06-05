@@ -20,6 +20,7 @@ importlib-metadata==4.11.4
 lxml==4.9.0
 multidict==6.0.2
 parse==1.19.0
+psycopg2==2.9.3
 pycodestyle==2.8.0
 pyee==8.2.2
 pyppeteer==1.0.2
