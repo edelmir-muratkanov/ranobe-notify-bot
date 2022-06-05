@@ -48,5 +48,5 @@ class Database:
         r = self.conn.execute(q)
 
     def delete(self, chat_id: int, name: str):
-        q = sources.delete().where(sources.c.chat_id == chat_id & sources.c.name == name)
+        q = sources.delete().where((sources.c.chat_id == chat_id) & (sources.c.name == name))
         r = self.conn.execute(q)
