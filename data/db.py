@@ -24,7 +24,7 @@ class Database:
         metadata.create_all(engine)
 
     def add(self, chat_id: int, name: str, url: str, last_num: int = 0):
-        q = sources.insert().values(chat_id, name, url, last_num)
+        q = sources.insert().values((chat_id, name, url, last_num))
         r = self.conn.execute(q)
 
     def get_all(self, chat_id: int | None):
@@ -44,7 +44,7 @@ class Database:
     def update(self, chat_id: int, name: str, url: str, last_num: int):
         q = sources.update()\
             .where(sources.c.chat_id == chat_id & sources.c.name == name)\
-            .values(chat_id, name, url, last_num)
+            .values((chat_id, name, url, last_num))
         r = self.conn.execute(q)
 
     def delete(self, chat_id: int, name: str):
