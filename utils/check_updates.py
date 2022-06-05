@@ -11,12 +11,12 @@ async def check(chat_id: str) -> str:
         if "ranobehub" in _url:
             num, url = await ranobehub(_url)
             if num != _num:
-                text += f'{url}\n'
+                text += f'{url}\n\n'
                 db.update(_chat_id, _name, _url, num)
         elif "mangaclub" in _url:
             num, url = await mangaclub(_url)
             if num != _num:
-                text += f'{url}\n'
+                text += f'{url}\n\n'
                 db.update(_chat_id, _name, _url, num)
 
     return f'Обновы:\n\n{text}' if text != '' else 'Обнов нет'

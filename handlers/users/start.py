@@ -32,4 +32,4 @@ async def check_updates(message: types.Message):
     print('check updates')
     chat_id = message.from_user.id
     text = await check(chat_id)
-    await message.answer(text)
+    await message.answer(text, disable_web_page_preview=True)
