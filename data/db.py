@@ -37,13 +37,13 @@ class Database:
         return r.fetchall()
 
     def get(self, chat_id: int,  name: str):
-        q = sources.select().where(sources.c.chat_id == str(chat_id) & sources.c.name == name)
+        q = sources.select().where((sources.c.chat_id == chat_id) & (sources.c.name == name))
         r = self.conn.execute(q)
         return r.fetchone()
 
     def update(self, chat_id: int, name: str, url: str, last_num: int):
         q = sources.update()\
-            .where(sources.c.chat_id == str(chat_id) & sources.c.name == name)\
+            .where((sources.c.chat_id == chat_id) & (sources.c.name == name))\
             .values((chat_id, name, url, last_num))
         r = self.conn.execute(q)
 
