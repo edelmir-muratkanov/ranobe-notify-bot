@@ -25,7 +25,7 @@ async def my_sources(message: types.Message):
         chat_id, name, url, num = _
         # text += f'{name}\n{url}\n\n'
         text += f'<a href={url}>{name}</a>'
-    await message.answer(text, disable_web_page_preview=True)
+    await message.answer(text, disable_web_page_preview=True, parse_mode=types.ParseMode.HTML)
 
 
 @dp.message_handler(text='Проверить обновления')
