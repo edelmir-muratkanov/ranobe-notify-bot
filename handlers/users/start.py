@@ -24,7 +24,7 @@ async def my_sources(message: types.Message):
     for _ in sources:
         chat_id, name, url, num = _
         # text += f'{name}\n{url}\n\n'
-        text += f'<a href="{url}">{name}</a>'
+        text += f'<a href="{url}">{name}</a>\n'
     await message.answer(text, disable_web_page_preview=True, parse_mode=types.ParseMode.HTML)
 
 
