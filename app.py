@@ -32,8 +32,7 @@ if __name__ == '__main__':
     db.setup()
     loop = asyncio.get_event_loop()
     loop.call_later(DELAY, repeat, autocheck, loop)
-    executor.start_polling(dp, on_startup=on_startup,
-                           loop=loop, skip_updates=True)
+    executor.start_polling(dp, on_startup=on_startup, loop=loop)
 
     # executor.start_webhook(
     #     dispatcher=dp,
